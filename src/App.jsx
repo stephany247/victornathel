@@ -72,7 +72,7 @@ function App() {
         </section>
         <section>
           <h2 className="text-2xl font-bold">See what my students are saying!</h2>
-          {/* <Carousel /> */}
+          <Carousel /> 
         </section>
         <section className="bg-hover-blue rounded-2xl p-12 md:p-20 md:gap-8 flex flex-col gap-6 items-center justify-center">
           <h1 className="text-3xl font-bold max-w-lg">
