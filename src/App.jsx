@@ -43,9 +43,7 @@ function App() {
       <main className="w-full flex flex-col items-center justify-center mx-auto gap-28 px-8  max-w-6xl">
         <section className="flex flex-col items-center justify-center gap-12 mt-8">
           <iframe
-            // width="560"
-            // height="315"
-            className="rounded-lg aspect-video w-[20rem] sm:w-[30rem] md:w-[40rem] lg:w-[50rem] border-2 border-blue"
+            className="rounded-lg aspect-video w-[21rem] sm:w-[30rem] md:w-[40rem] lg:w-[50rem] border-2 border-blue"
             src="https://www.youtube.com/embed/6cFz79blyhA?controls=1"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -59,7 +57,7 @@ function App() {
         <section className="max-w-5xl">
           <h2 className="text-2xl font-bold">Why choose digital marketing?</h2>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full mt-10">
             {cardData.map((item, index) => (
               <div
                 key={index}
@@ -72,11 +70,10 @@ function App() {
           </div>
         </section>
         <section className="grid gap-52 md:gap-32 my-20">
-          {/* <h2 className="text-2xl font-bold">See what my students are saying!</h2> */}
           <Carousel />
           <VideoCarousel />
         </section>
-        <section className="bg-hover-blue rounded-2xl p-12 md:p-20 md:gap-8 flex flex-col gap-6 items-center justify-center">
+        <section className="bg-hover-blue rounded-2xl p-12 md:p-20 md:gap-8 flex flex-col gap-6 items-center justify-center w-full max-w-2xl">
           <h1 className="text-3xl font-bold max-w-lg">
             Ready to Start Earning ₦120,000 Weekly?
           </h1>

@@ -28,7 +28,7 @@ const Carousel = () => {
     <div className="grid gap-10">
       <h2 className="text-3xl font-bold">See what my students are saying!</h2>
       <div className="relative z-0 w-full h-[400px] md:h-[500px] max-w-3xl rounded-lg">
-        <div className="flex gap-4 transition-all duration-500 rounded-lg ease-in-out max-w-2xl">
+        <div className="flex gap-4 transition-all duration-500 rounded-lg ease-in-out w-full">
           {/* First Image */}
           <img
             className="object-cover w-full md:w-1/2 rounded-lg h-[32rem]"
