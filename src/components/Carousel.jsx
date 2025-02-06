@@ -3,6 +3,7 @@ import test1 from "../assets/test1.webp";
 import test2 from "../assets/test2.webp";
 import test3 from "../assets/test3.webp";
 import test4 from "../assets/test4.webp";
+import { Icon } from "@iconify/react";
 
 const Carousel = () => {
   // Array of images
@@ -24,49 +25,54 @@ const Carousel = () => {
   const nextImageIndex = (currentIndex + 1) % images.length;
 
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] mt-10 overflow-hidden max-w-3xl rounded-lg">
-      <div className="flex gap-4 transition-all duration-500 ease-in-out">
-        {/* First Image */}
-        <img
-          className="object-cover w-1/2 h-full rounded-lg min-h-[32rem]"
-          src={images[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
-        />
-        {/* Second Image */}
-        <img
-          className="object-cover w-1/2 h-full rounded-lg min-h-[32rem]"
-          src={images[nextImageIndex]}
-          alt={`Slide ${nextImageIndex + 1}`}
-        />
-      </div>
+    <div className="grid gap-10">
+      <h2 className="text-3xl font-bold">See what my students are saying!</h2>
+      <div className="relative z-0 w-full h-[400px] md:h-[500px] max-w-3xl rounded-lg bg-transparent">
+        <div className="flex gap-4 transition-all duration-500 rounded-lg ease-in-out bg-transparent max-w-2xl">
+          {/* First Image */}
+          <img
+            className="object-cover w-1/2 rounded-lg h-[32rem]"
+            src={images[currentIndex]}
+            alt={`Slide ${currentIndex + 1}`}
+          />
+          {/* Second Image */}
+          <img
+            className="object-cover w-1/2 rounded-lg h-[32rem]"
+            src={images[nextImageIndex]}
+            alt={`Slide ${nextImageIndex + 1}`}
+          />
+        </div>
 
-      {/* Left Arrow (Previous) */}
-      <button
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full opacity-50 hover:opacity-100"
-        onClick={prevSlide}
-      >
-        &#8592;
-      </button>
+        {/* Left Arrow (Previous) */}
+        <button
+          className="absolute -left-6 top-1/2 z-10 transform -translate-y-1/2 text-gray-800 bg-white p-3 rounded-full border shadow-2xl opacity-100 hover:bg-light-blue"
+          onClick={prevSlide}
+        >
+          {/* &#8592; */}
+          <Icon icon="prime:arrow-left" className="size-6" />
+        </button>
 
-      {/* Right Arrow (Next) */}
-      <button
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full opacity-50 hover:opacity-100"
-        onClick={nextSlide}
-      >
-        &#8594;
-      </button>
+        {/* Right Arrow (Next) */}
+        <button
+          className="absolute -right-6 top-1/2 z-10 transform -translate-y-1/2 text-gray-800 bg-white p-3 rounded-full border shadow-2xl opacity-100 hover:bg-light-blue"
+          onClick={nextSlide}
+        >
+          {/* &#8594; */}
+          <Icon icon="prime:arrow-right" className="size-6" />
+        </button>
+        {/* Optional: Dots Navigation */}
 
-      {/* Optional: Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`cursor-pointer w-3 h-3 rounded-full bg-white opacity-50 hover:opacity-100 ${
-              index === currentIndex ? "bg-blue-500" : ""
-            }`}
-          ></span>
-        ))}
+        <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`cursor-pointer w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "bg-blue" : "bg-hover-blue"
+              }`}
+            ></span>
+          ))}
+        </div>
       </div>
     </div>
   );
