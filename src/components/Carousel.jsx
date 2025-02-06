@@ -27,17 +27,17 @@ const Carousel = () => {
   return (
     <div className="grid gap-10">
       <h2 className="text-3xl font-bold">See what my students are saying!</h2>
-      <div className="relative z-0 w-full h-[400px] md:h-[500px] max-w-3xl rounded-lg bg-transparent">
-        <div className="flex gap-4 transition-all duration-500 rounded-lg ease-in-out bg-transparent max-w-2xl">
+      <div className="relative z-0 w-full h-[400px] md:h-[500px] max-w-3xl rounded-lg">
+        <div className="flex gap-4 transition-all duration-500 rounded-lg ease-in-out max-w-2xl">
           {/* First Image */}
           <img
-            className="object-cover w-1/2 rounded-lg h-[32rem]"
+            className="object-cover w-full md:w-1/2 rounded-lg h-[32rem]"
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
           />
           {/* Second Image */}
           <img
-            className="object-cover w-1/2 rounded-lg h-[32rem]"
+            className="object-cover w-1/2 rounded-lg h-[32rem] hidden md:block"
             src={images[nextImageIndex]}
             alt={`Slide ${nextImageIndex + 1}`}
           />
@@ -48,7 +48,6 @@ const Carousel = () => {
           className="absolute -left-6 top-1/2 z-10 transform -translate-y-1/2 text-gray-800 bg-white p-3 rounded-full border shadow-2xl opacity-100 hover:bg-light-blue"
           onClick={prevSlide}
         >
-          {/* &#8592; */}
           <Icon icon="prime:arrow-left" className="size-6" />
         </button>
 
@@ -57,12 +56,11 @@ const Carousel = () => {
           className="absolute -right-6 top-1/2 z-10 transform -translate-y-1/2 text-gray-800 bg-white p-3 rounded-full border shadow-2xl opacity-100 hover:bg-light-blue"
           onClick={nextSlide}
         >
-          {/* &#8594; */}
           <Icon icon="prime:arrow-right" className="size-6" />
         </button>
-        {/* Optional: Dots Navigation */}
 
-        <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {/* Dots Navigation */}
+        <div className="absolute -bottom-40 md:-bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {images.map((_, index) => (
             <span
               key={index}
