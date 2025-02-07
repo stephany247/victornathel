@@ -24,19 +24,19 @@ const VideoCarousel = () => {
 
   return (
     <div className="grid gap-10 mt-10 mx-auto">
-      <h2 className="text-3xl font-bold">Hear what my students are saying!</h2>
+      <h2 className="text-xl md:text-3xl font-bold">Hear what my students are saying!</h2>
       <div className="relative w-full max-w-3xl">
         <div className="flex gap-4 transition-all duration-500 ease-in-out max-w-3xl">
           {/* First Video */}
           <iframe
-            className="rounded-lg aspect-video w-full sm:h-[20rem] md:w-[20rem] border-2 border-blue"
+            className="rounded-lg aspect-square w-full sm:h-[20rem] md:w-[20rem] border-2 border-blue"
             src={videoLinks[currentIndex]}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
           {/* Second Video */}
           <iframe
-            className="rounded-lg aspect-video w-[20rem] sm:h-[20rem] md:w-[20rem] border-2 border-blue hidden md:block"
+            className="rounded-lg aspect-square w-[20rem] sm:h-[20rem] md:w-[20rem] border-2 border-blue hidden md:block"
             src={videoLinks[nextVideoIndex]}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

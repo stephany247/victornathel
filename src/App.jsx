@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       <header className="flex flex-col items-center justify-center mx-auto gap-4 sm:gap-8 lg:gap-12 px-8 mt-20 max-w-6xl">
-        <h1 className="text-3xl font-medium sm:text-5xl sm:font-semibold">
+        <h1 className="text-2xl md:text-3xl font-semibold md:font-medium sm:text-5xl sm:font-semibold">
           Discover How You Can Earn Over ₦120,000 weekly using your phone and
           data
         </h1>
